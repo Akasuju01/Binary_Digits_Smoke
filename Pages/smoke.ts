@@ -4,7 +4,8 @@ import "dotenv/config";
 export class SmokeTest {
     constructor(private page: Page) {}
     async HomePage() {
-        await this.page.goto(process.env.HomePageURL!);
+        const HomeURL= await this.page.goto(process.env.HomePageURL!);
+        const Herosection_Heading =this.page.getByRole('heading', { name: 'Discover Insights On  Topics From Industry' });
     }
     async servicePage() {
         await this.page.goto(process.env.ServicePageURL!);
